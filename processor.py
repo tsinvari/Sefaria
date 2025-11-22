@@ -269,8 +269,8 @@ def process_prepared_data(input_file, daf_reaction_output_file, non_daf_reaction
 # -------------------------------
 
 if __name__ == "__main__":
-    INPUT_JSON_FILE = "2025-11-04_preparedata_Dafreactions.json"
-    OUTPUT_DAF_FILE = "2025-11-04_processed_data_Dafreactions.json"
+    INPUT_JSON_FILE = "2025-11-22_preparedata_DafReactions.json"
+    OUTPUT_DAF_FILE = "2025-11-22_processed_data_Dafreactions.json"
     OUTPUT_NON_DAF_FILE = "2025-11-04_notdafreaction.json"
 
     print("\n📂 Sefaria Classification Processor")

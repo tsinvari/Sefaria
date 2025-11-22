@@ -196,7 +196,7 @@ def run_refiner_phases(input_file: str, output_file: str):
 
 if __name__ == "__main__":
     # The file from Script 2 (or your last processed file)
-    INPUT_FILE = "2025-11-04_processed_data_Dafreactions.json" 
+    INPUT_FILE = "2025-11-22_processed_data_Dafreactions.json" 
     
     input_filename = os.path.basename(INPUT_FILE)
     output_filename = f"refined_{input_filename}"
