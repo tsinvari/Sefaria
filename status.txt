@@ -1,0 +1,554 @@
+✅ Phase 2 Complete. All items should now have valid text.
+
+--------------------------------------------------------------------------------
+🚀 Starting Phase 3: Final Confirmation...
+    Press ENTER to confirm the ref, or type a new one.
+--------------------------------------------------------------------------------
+
+🎞️  VIDEO 1/202: Daf Reactions Zevachim 62: THE GREAT ETROG BATTLE #dafreactions #Talmud #dafyomi
+    ℹ️  Current Ref: Zevachim 62a
+        EN: and one may not build it on top of tunnels....
+    Enter new ref (or press ENTER to keep): Zevachim 62a.10
+    ⬇️  Fetching text for 'Zevachim 62a.10'...
+    ✅ Success! Ref updated to: Zevachim 62a:10
+
+🎞️  VIDEO 2/202: Daf Reactions Zevachim 58: God's Home Decor
+    ℹ️  Current Ref: Zevachim 58a
+        EN: MISHNA: It was taught in the previous chapter that offerings of the most sacred order are to be slau...
+    Enter new ref (or press ENTER to keep): Zevachim 58b.5
+    ⬇️  Fetching text for 'Zevachim 58b.5'...
+    ✅ Success! Ref updated to: Zevachim 58b:5
+
+🎞️  VIDEO 3/202: Daf Reactions Zevachim 45: Out of Time
+    ℹ️  Current Ref: Zevachim 45a
+        EN: Does one issue a halakha for the messianic period, when the Temple will be rebuilt? Abaye said to hi...
+    Enter new ref (or press ENTER to keep):               
+    ✅ Keeping: Zevachim 45a
+
+🎞️  VIDEO 4/202: Daf Reactions Zevachim 35: Spin Cycle
+    ℹ️  Current Ref: Zevachim 35a
+        EN: I too said that the blood should be sprinkled only when it was collected in a vessel. The Gemara ask...
+    Enter new ref (or press ENTER to keep): Zavachim 35a.7
+    ⬇️  Fetching text for 'Zavachim 35a.7'...
+    ❌ ERROR: Ref 'Zavachim 35a.7' is valid but has no text (e.g., it's a heading). Please try a different segment.
+    ❌ Failed. Try new ref (or ENTER to keep original 'Zevachim 35a'): Zevachim 35a.7
+    ⬇️  Fetching text for 'Zevachim 35a.7'...
+    ✅ Success! Ref updated to: Zevachim 35a:7
+
+🎞️  VIDEO 5/202: Daf Reactions Zevachim 18, 19, & 20: Avant-garde in the Temple Yard!
+    ℹ️  Current Ref: Zevachim 18a
+        EN: The verse states “statute” with regard to those who drank wine, and it likewise states “statute” wit...
+    Enter new ref (or press ENTER to keep): 
+    ✅ Keeping: Zevachim 18a
+
+🎞️  VIDEO 6/202: Daf Reactions Zevachim 15: Sacrificial Cringe
+    ℹ️  Current Ref: Zevachim 15a
+        EN: The Gemara asks: If the blood was conveyed by hand, is it possible to correct it by conveying it aga...
+    Enter new ref (or press ENTER to keep):          
+    ✅ Keeping: Zevachim 15a
+
+🎞️  VIDEO 7/202: Daf Reactions Horayot 12: Squash Your Fears
+    ℹ️  Current Ref: Horayot 12a
+        EN: The Gemara asks with regard to the fact that Jehoahaz was anointed: And was there anointing oil duri...
+    Enter new ref (or press ENTER to keep): Horayot 12a.12
+    ⬇️  Fetching text for 'Horayot 12a.12'...
+    ✅ Success! Ref updated to: Horayot 12a:12
+
+🎞️  VIDEO 8/202: Daf Reactions Horayot 10: Hammer Time
+    ℹ️  Current Ref: Horayot 10a
+        EN: and thereafter sinned brings a bull. Does the case of one who sinned and thereafter moved on from hi...
+    Enter new ref (or press ENTER to keep): Horayot 10b.17
+    ⬇️  Fetching text for 'Horayot 10b.17'...
+    ✅ Success! Ref updated to: Horayot 10b:17
+
+🎞️  VIDEO 9/202: Daf Reactions Horayot 5: Members of the Tribe
+    ℹ️  Current Ref: Horayot 5a
+        EN: Rabbi Shimon says: They bring thirteen bulls; and for idol worship they bring thirteen bulls and thi...
+    Enter new ref (or press ENTER to keep): Horayot 5a.5
+    ⬇️  Fetching text for 'Horayot 5a.5'...
+    ✅ Success! Ref updated to: Horayot 5a:5
+
+🎞️  VIDEO 10/202: Daf Reactions Avodah Zarah 76: Shank the Ground
+    ℹ️  Current Ref: Avodah_Zarah 76a
+        EN: that was used for cooking that same day by a gentile, as in such a case, it does not impart flavor t...
+    Enter new ref (or press ENTER to keep): Avodah_Zarah 76b.2
+    ⬇️  Fetching text for 'Avodah_Zarah 76b.2'...
+    ✅ Success! Ref updated to: Avodah Zarah 76b:2
+
+🎞️  VIDEO 11/202: (Throwback) Daf Reactions Rosh Hashanah 16: Judgement Day
+    ℹ️  Current Ref: Rosh_Hashanah 16a
+        EN: MISHNA: At four times of the year the world is judged: On Passover judgment is passed concerning gra...
+    Enter new ref (or press ENTER to keep):                
+    ✅ Keeping: Rosh_Hashanah 16a
+
+🎞️  VIDEO 12/202: Daf Reactions Avodah Zarah 69: City Mouse, Country Mouse 🐁
+    ℹ️  Current Ref: Avodah_Zarah 69a
+        EN: If a mouse fell into vinegar, what is the halakha? Does it enhance its flavor? Rav Hillel said to Ra...
+    Enter new ref (or press ENTER to keep): Avodah_Zarah 69a.2
+    ⬇️  Fetching text for 'Avodah_Zarah 69a.2'...
+    ✅ Success! Ref updated to: Avodah Zarah 69a:2
+
+🎞️  VIDEO 13/202: Daf Reactions Avodah Zarah 65: Government H00ker
+    ℹ️  Current Ref: Avodah_Zarah 65a
+        EN: to a gentile named Avidarna on their festival day. Rav Yehuda said: I know of him that he does not w...
+    Enter new ref (or press ENTER to keep): Avodah_Zarah 65a.3
+    ⬇️  Fetching text for 'Avodah_Zarah 65a.3'...
+    ✅ Success! Ref updated to: Avodah Zarah 65a:3
+
+🎞️  VIDEO 14/202: Daf Reactions Avodah Zarah 43: A Tolkien Talmud Quest
+    ℹ️  Current Ref: Avodah_Zarah 43a
+        EN: The Sages interpret this verse as referring to the heavenly constellations, which indicates that it ...
+    Enter new ref (or press ENTER to keep):              
+    ✅ Keeping: Avodah_Zarah 43a
+
+🎞️  VIDEO 15/202: Daf Reactions Avodah Zarah 41: One Ring To Rule Them All
+    ℹ️  Current Ref: Avodah_Zarah 41a
+        EN: Rabba says: The dispute between Rabbi Meir and the Rabbis is only with regard to statues that are er...
+    Enter new ref (or press ENTER to keep): Avodah_Zarah 41a.7
+    ⬇️  Fetching text for 'Avodah_Zarah 41a.7'...
+    ✅ Success! Ref updated to: Avodah Zarah 41a:7
+
+🎞️  VIDEO 16/202: Daf Reactions Avodah Zarah 28: ✨Medicinal Glam✨
+    ℹ️  Current Ref: Avodah_Zarah 28a
+        EN: internal injury, one may not be treated by them. The Gemara asks: What is the difference between the...
+    Enter new ref (or press ENTER to keep): Avodah_Zarah 28b.9
+    ⬇️  Fetching text for 'Avodah_Zarah 28b.9'...
+    ✅ Success! Ref updated to: Avodah Zarah 28b:9
+
+🎞️  VIDEO 17/202: Daf Reactions Avodah Zarah 25: Pagan Panic Paranoia 😱
+    ℹ️  Current Ref: Avodah_Zarah 25a
+        EN: § The Gemara cites a series of expositions with regard to what is called the book of Yashar. The ver...
+    Enter new ref (or press ENTER to keep): 
+    ✅ Keeping: Avodah_Zarah 25a
+
+🎞️  VIDEO 18/202: Daf Reactions Avodah Zarah 20: Death and the Male Gaze
+    ℹ️  Current Ref: Avodah_Zarah 20a
+        EN: The source is that the verse states: “You should not show them mercy [lo teḥonnem]” (Deuteronomy 7:2...
+    Enter new ref (or press ENTER to keep): 
+    ✅ Keeping: Avodah_Zarah 20a
+
+🎞️  VIDEO 19/202: Daf Reactions Avodah Zarah 18: The Beruriah Incident
+    ℹ️  Current Ref: Avodah_Zarah 18a
+        EN: pronounce the ineffable name of God with all of its letters, i.e., as it is spelled. The Gemara asks...
+    Enter new ref (or press ENTER to keep): Avodah_Zarah 18a.14
+    ⬇️  Fetching text for 'Avodah_Zarah 18a.14'...
+    ✅ Success! Ref updated to: Avodah Zarah 18a:14
+
+🎞️  VIDEO 20/202: Daf Reactions Avodah Zarah 17: The Fart of True Repentance
+    ℹ️  Current Ref: Avodah_Zarah 17a
+        EN: and you derived pleasure from it, and because of this you were held responsible by Heaven. Rabbi Eli...
+    Enter new ref (or press ENTER to keep): Avodah_Zarah 17a.12
+    ⬇️  Fetching text for 'Avodah_Zarah 17a.12'...
+    ✅ Success! Ref updated to: Avodah Zarah 17a:12
+
+🎞️  VIDEO 21/202: DAF REACTIONS MINISODE: AVODAH ZARAH 14
+    ℹ️  Current Ref: Avodah_Zarah 14a
+        EN: GEMARA: The Gemara analyzes the terms in the mishna: What is the meaning of itzterubalin? This is th...
+    Enter new ref (or press ENTER to keep):             
+    ✅ Keeping: Avodah_Zarah 14a
+
+🎞️  VIDEO 22/202: Daf Reactions Avodah Zarah 12: The Demon in the Water
+    ℹ️  Current Ref: Avodah_Zarah 12a
+        EN: place two pots on one stove, and yet the Sages were not concerned and did not issue a prohibition wi...
+    Enter new ref (or press ENTER to keep): Avodah_Zarah 12b.1
+    ⬇️  Fetching text for 'Avodah_Zarah 12b.1'...
+    ✅ Success! Ref updated to: Avodah Zarah 12b:1
+
+🎞️  VIDEO 23/202: Daf Reactions Avodah Zarah 4: Hell on Earth
+    ℹ️  Current Ref: Avodah_Zarah 4a
+        EN: by it, as it is written: “For, behold, the day comes, it burns as a furnace; and all the proud, and ...
+    Enter new ref (or press ENTER to keep):               
+    ✅ Keeping: Avodah_Zarah 4a
+
+🎞️  VIDEO 24/202: Daf Reactions Avodah Zarah 3: What Does God Do All Day?
+    ℹ️  Current Ref: Avodah_Zarah 3a
+        EN: This serves to say that even if they fulfill the seven Noahide mitzvot they do not receive a reward ...
+    Enter new ref (or press ENTER to keep): Avodah_Zarah 3b.7
+    ⬇️  Fetching text for 'Avodah_Zarah 3b.7'...
+    ✅ Success! Ref updated to: Avodah Zarah 3b:7
+
+🎞️  VIDEO 25/202: Daf Reactions Shevuot 30: Quacktivist Judge
+    ℹ️  Current Ref: Shevuot 30a
+        EN: MISHNA: The oath of testimony is practiced with regard to men but not with regard to women, with reg...
+    Enter new ref (or press ENTER to keep): Shevuot 30b.4
+    ⬇️  Fetching text for 'Shevuot 30b.4'...
+    ✅ Success! Ref updated to: Shevuot 30b:4
+
+🎞️  VIDEO 26/202: Daf Reactions Shevuot 19: Situational Awareness
+    ℹ️  Current Ref: Shevuot 19a
+        EN: the Torah needs to write both “domesticated animal” and “undomesticated animal” in the verse “or the...
+    Enter new ref (or press ENTER to keep): Shevuot 19a.6
+    ⬇️  Fetching text for 'Shevuot 19a.6'...
+    ✅ Success! Ref updated to: Shevuot 19a:6
+
+🎞️  VIDEO 27/202: Daf Reactions Shevuot 14: Floppy Disk
+    ℹ️  Current Ref: Shevuot 14a
+        EN: for their defiling of the Temple or its sacrificial foods. Through which means, then, do they achiev...
+    Enter new ref (or press ENTER to keep): Shevuot 14b.4
+    ⬇️  Fetching text for 'Shevuot 14b.4'...
+    ✅ Success! Ref updated to: Shevuot 14b:4
+
+🎞️  VIDEO 28/202: The Story of Shimon bar Yochai: Daf Reactions Shabbat 33 & 34
+    ℹ️  Current Ref: Shabbat 33a
+        EN: who eat and do nothing to support themselves, and cause their husbands to commit the sin of theft. A...
+    Enter new ref (or press ENTER to keep): Shabbat 33b.5
+    ⬇️  Fetching text for 'Shabbat 33b.5'...
+    ✅ Success! Ref updated to: Shabbat 33b:5
+
+🎞️  VIDEO 29/202: Daf Reactions Shevuot 5: 50 Shades of Eggshell
+    ℹ️  Current Ref: Shevuot 5a
+        EN: using the method of amplifications and restrictions....
+    Enter new ref (or press ENTER to keep): Shevuot 5a.17
+    ⬇️  Fetching text for 'Shevuot 5a.17'...
+    ✅ Success! Ref updated to: Shevuot 5a:17
+
+🎞️  VIDEO 30/202: Throwback Daf Reactions Makkot 21: Jews, Tattoos, Fake News?
+    ℹ️  Current Ref: Makkot 21a
+        EN: The Gemara answers: Rabbi Yosei derives that halakha from a different source, as Rabbi Yosei holds t...
+    Enter new ref (or press ENTER to keep):          
+    ✅ Keeping: Makkot 21a
+
+🎞️  VIDEO 31/202: Daf Reactions Makkot 13: In This Economy??
+    ℹ️  Current Ref: Makkot 13a
+        EN: The unintentional murderers would pay a fee to the Levites as rent for their living quarters in the ...
+    Enter new ref (or press ENTER to keep): Makkot 13a.3
+    ⬇️  Fetching text for 'Makkot 13a.3'...
+    ✅ Success! Ref updated to: Makkot 13a:3
+
+🎞️  VIDEO 32/202: Daf Reactions Makkot 7: Injustice System
+    ℹ️  Current Ref: Makkot 7a
+        EN: Apropos disqualified witnesses, the Gemara relates: Two people called Ile’a and Tuviyya, who signed ...
+    Enter new ref (or press ENTER to keep): Makkot 7a.3
+    ⬇️  Fetching text for 'Makkot 7a.3'...
+    ✅ Success! Ref updated to: Makkot 7a:3
+
+🎞️  VIDEO 33/202: Daf Reactions Sanhedrin 110: Singed And Singing
+    ℹ️  Current Ref: Sanhedrin 110a
+        EN: and exposed her hair as though she were bathing. Anyone who came and saw her stepped back. In the me...
+    Enter new ref (or press ENTER to keep): Sanhedrin 110a.17
+    ⬇️  Fetching text for 'Sanhedrin 110a.17'...
+    ✅ Success! Ref updated to: Sanhedrin 110a:17
+
+🎞️  VIDEO 34/202: Daf Reactions Sanhedrin 91: The Promised Chiropractor
+    ℹ️  Current Ref: Sanhedrin 91a
+        EN: The daughter of the emperor said to Rabban Gamliel: Leave him, and I will respond to him with a para...
+    Enter new ref (or press ENTER to keep): Sanhedrin 91a.5
+    ⬇️  Fetching text for 'Sanhedrin 91a.5'...
+    ✅ Success! Ref updated to: Sanhedrin 91a:5
+
+🎞️  VIDEO 35/202: Daf Reactions Sanhedrin 89: God's Groupchat
+    ℹ️  Current Ref: Sanhedrin 89a
+        EN: that the upper knot is mandated by Torah law, then fulfillment of the mitzva is already compromised ...
+    Enter new ref (or press ENTER to keep): Sanhedrin 89a.7
+    ⬇️  Fetching text for 'Sanhedrin 89a.7'...
+    ✅ Success! Ref updated to: Sanhedrin 89a:7
+
+🎞️  VIDEO 36/202: Daf Reactions Sanhedrin 68: Cucumbersome
+    ℹ️  Current Ref: Sanhedrin 68a
+        EN: The Gemara asks: And did Rabbi Akiva learn these halakhot from Rabbi Yehoshua? But isn’t it taught i...
+    Enter new ref (or press ENTER to keep): Sanhedrin 68a.7
+    ⬇️  Fetching text for 'Sanhedrin 68a.7'...
+    ✅ Success! Ref updated to: Sanhedrin 68a:7
+
+🎞️  VIDEO 37/202: Daf Reactions Sanhedrin 75: Female Rage Riot Anthem!
+    ℹ️  Current Ref: Sanhedrin 75a
+        EN: And if it is so that a descendant of Noah is commanded about the sanctification of God’s name, he sh...
+    Enter new ref (or press ENTER to keep): Sanhedrin 75a.2
+    ⬇️  Fetching text for 'Sanhedrin 75a.2'...
+    ✅ Success! Ref updated to: Sanhedrin 75a:2
+
+🎞️  VIDEO 38/202: Daf Reactions Sanhedrin 64:  Understood the Assignment 🍑
+    ℹ️  Current Ref: Sanhedrin 64a
+        EN: Hush, so as not to mention the name of the Lord (see Amos 6:10). The child did not want to even hear...
+    Enter new ref (or press ENTER to keep): Sanhedrin 64a.13
+    ⬇️  Fetching text for 'Sanhedrin 64a.13'...
+    ✅ Success! Ref updated to: Sanhedrin 64a:13
+
+🎞️  VIDEO 39/202: Throwback Daf Reactions Ta’anit 23: Birch, Please! 🌳
+    ℹ️  Current Ref: Taanit 23a
+        EN: “In their season” means on Wednesday eves, i.e., Tuesday nights, and on Shabbat eves, i.e., Friday n...
+    Enter new ref (or press ENTER to keep): Taanit 23a.14 
+    ⬇️  Fetching text for 'Taanit 23a.14'...
+    ✅ Success! Ref updated to: Taanit 23a:14
+
+🎞️  VIDEO 40/202: Daf Reactions Sanhedrin 50: Guillotine? Away! Bring out the Trebuchet!
+    ℹ️  Current Ref: Sanhedrin 50a
+        EN: The Gemara answers: The Rabbis hold that only the married daughter of a priest who committed adulter...
+    Enter new ref (or press ENTER to keep): Sanhedrin 50b.1
+    ⬇️  Fetching text for 'Sanhedrin 50b.1'...
+    ✅ Success! Ref updated to: Sanhedrin 50b:1
+
+🎞️  VIDEO 41/202: Daf Reactions Sanhedrin 26: Pride Goeth Before an Epic Fail
+    ℹ️  Current Ref: Sanhedrin 26a
+        EN: And everyone would hide. When the head tax collector would arrive, Rabbi Zeira’s father would say to...
+    Enter new ref (or press ENTER to keep): Sanhedrin 26a.24
+    ⬇️  Fetching text for 'Sanhedrin 26a.24'...
+    ✅ Success! Ref updated to: Sanhedrin 26a:24
+
+🎞️  VIDEO 42/202: Daf Reactions Sanhedrin 21: Ew, David!
+    ℹ️  Current Ref: Sanhedrin 21a
+        EN: “And they made Solomon, son of David, king the second time, and anointed him unto the Lord to be lea...
+    Enter new ref (or press ENTER to keep):             
+    ✅ Keeping: Sanhedrin 21a
+
+🎞️  VIDEO 43/202: Daf Reactions Sanhedrin 14: Hold My Colosseum
+    ℹ️  Current Ref: Sanhedrin 14a
+        EN: the laws of fines would have ceased to be implemented from among the Jewish people, as they would no...
+    Enter new ref (or press ENTER to keep): Sanhedrin 14a.2
+    ⬇️  Fetching text for 'Sanhedrin 14a.2'...
+    ✅ Success! Ref updated to: Sanhedrin 14a:2
+
+🎞️  VIDEO 44/202: Daf Reactions Bava Batra 175: The Bavas and I
+    ℹ️  Current Ref: Bava_Batra 175a
+        EN: Here, too, with regard to the Temple treasury, apply the same principle and say: A person is prone t...
+    Enter new ref (or press ENTER to keep):               
+    ✅ Keeping: Bava_Batra 175a
+
+🎞️  VIDEO 45/202: Daf Reactions Bava Batra 164: That Hot Talmud Tea! 🫖
+    ℹ️  Current Ref: Bava_Batra 164a
+        EN: And if you say: There is a possibility of forgery with such a document, as the holder of the documen...
+    Enter new ref (or press ENTER to keep): Bava_Batra 164b.15       
+    ⬇️  Fetching text for 'Bava_Batra 164b.15'...
+    ✅ Success! Ref updated to: Bava Batra 164b:15
+
+🎞️  VIDEO 46/202: Daf Reactions Bava Batra 153: He Had It Coming
+    ℹ️  Current Ref: Bava_Batra 153a
+        EN: Rav’s disciples understood from this that this statement applies only when the person on his deathbe...
+    Enter new ref (or press ENTER to keep): Bava_Batra 153a.9
+    ⬇️  Fetching text for 'Bava_Batra 153a.9'...
+    ✅ Success! Ref updated to: Bava Batra 153a:9
+
+🎞️  VIDEO 47/202: Daf Reactions Bava Batra 151: Sage Awareness
+    ℹ️  Current Ref: Bava_Batra 151a
+        EN: A scribe may write a deed of sale for the seller of property at the seller’s request, even if the bu...
+    Enter new ref (or press ENTER to keep): Bava_Batra 151b.5
+    ⬇️  Fetching text for 'Bava_Batra 151b.5'...
+    ✅ Success! Ref updated to: Bava Batra 151b:5
+
+🎞️  VIDEO 48/202: Throwback Daf Reactions Brachot 18: Ghoul, Please
+    ℹ️  Current Ref: Brachot 18a
+        EN: And there is no need for others to recite a blessing beforehand on his behalf, nor do others invite ...
+    Enter new ref (or press ENTER to keep): Brachot 18b.7
+    ⬇️  Fetching text for 'Brachot 18b.7'...
+    ✅ Success! Ref updated to: Berakhot 18b:7
+
+🎞️  VIDEO 49/202: Daf Reactions Bava Batra 111: A Lone Wolf
+    ℹ️  Current Ref: Bava_Batra 111a
+        EN: The verse states: “And every daughter who possesses an inheritance from the tribes of the children o...
+    Enter new ref (or press ENTER to keep):            
+    ✅ Keeping: Bava_Batra 111a
+
+🎞️  VIDEO 50/202: Daf Reactions Bava Batra 99: Wingspan
+    ℹ️  Current Ref: Bava_Batra 99a
+        EN: The verse teaches us this: The area below the cherubs is like the area above them; just as the area ...
+    Enter new ref (or press ENTER to keep): Bava_Batra 99a.2
+    ⬇️  Fetching text for 'Bava_Batra 99a.2'...
+    ✅ Success! Ref updated to: Bava Batra 99a:2
+
+🎞️  VIDEO 51/202: Daf Reactions Minisode: Bava Batra 84
+    ℹ️  Current Ref: Bava_Batra 84a
+        EN: the buyer can say to the seller: If you had not exploited me, you would not be able to renege on the...
+    Enter new ref (or press ENTER to keep): Bava_Batra 84a.7
+    ⬇️  Fetching text for 'Bava_Batra 84a.7'...
+    ✅ Success! Ref updated to: Bava Batra 84a:7
+
+🎞️  VIDEO 52/202: Daf Reactions Bava Batra 74: The Episode With No Name
+    ℹ️  Current Ref: Bava_Batra 74a
+        EN: and they were lying on their backs. And the knee of one of them was elevated, and he was so enormous...
+    Enter new ref (or press ENTER to keep): Bava_Batra 74a.5
+    ⬇️  Fetching text for 'Bava_Batra 74a.5'...
+    ❌ ERROR fetching 'Bava_Batra 74a.5': 503 Server Error: Service Unavailable for url: https://www.sefaria.org/api/texts/Bava_Batra.74a.5?context=0
+    ❌ Failed. Try new ref (or ENTER to keep original 'Bava_Batra 74a'): Bava_Batra 74a.5
+    ⬇️  Fetching text for 'Bava_Batra 74a.5'...
+    ✅ Success! Ref updated to: Bava Batra 74a:5
+
+🎞️  VIDEO 53/202: Daf Reactions Bava Batra 33: Miggo?! You Go!
+    ℹ️  Current Ref: Bava_Batra 33a
+        EN: other money with him, i.e., he owed me money for a different reason, for which I had no collateral, ...
+    Enter new ref (or press ENTER to keep): Bava_Batra 33a.3
+    ⬇️  Fetching text for 'Bava_Batra 33a.3'...
+    ✅ Success! Ref updated to: Bava Batra 33a:3
+
+🎞️  VIDEO 54/202: Daf Reactions Bava Batra 22: The Wicker Elephant
+    ℹ️  Current Ref: Bava_Batra 22a
+        EN: Jealousy among teachers increases wisdom....
+    Enter new ref (or press ENTER to keep): Bava_Batra 22a.7
+    ⬇️  Fetching text for 'Bava_Batra 22a.7'...
+    ✅ Success! Ref updated to: Bava Batra 22a:7
+
+🎞️  VIDEO 55/202: Daf Reactions Minisode Bava Batra 21: NOT THE FREE SAMPLES 😩😱
+    ℹ️  Current Ref: Bava_Batra 21a
+        EN: In the latter clause we arrive at the case of schoolchildren who come to learn Torah in his house, a...
+    Enter new ref (or press ENTER to keep): Bava_Batra 21b.6
+    ⬇️  Fetching text for 'Bava_Batra 21b.6'...
+    ✅ Success! Ref updated to: Bava Batra 21b:6
+
+🎞️  VIDEO 56/202: Daf Reactions Bava Batra 15: Spoiler Alert!
+    ℹ️  Current Ref: Bava_Batra 15a
+        EN: and by the three sons of Korah....
+    Enter new ref (or press ENTER to keep): Bava_Batra 15a.4
+    ⬇️  Fetching text for 'Bava_Batra 15a.4'...
+    ✅ Success! Ref updated to: Bava Batra 15a:4
+
+🎞️  VIDEO 57/202: Daf Reactions Bava Batra 8: Bombastic Side Eye
+    ℹ️  Current Ref: Bava_Batra 8a
+        EN: these are Torah scholars, and towers do not require additional protection? The Gemara comments: And ...
+    Enter new ref (or press ENTER to keep): Bava_Batra 8a.10
+    ⬇️  Fetching text for 'Bava_Batra 8a.10'...
+    ✅ Success! Ref updated to: Bava Batra 8a:10
+
+🎞️  VIDEO 58/202: #DafReactions minisode #BavaBatra 7: Elijah Hates Gates
+    ℹ️  Current Ref: Bava Batra 7a
+        EN: The owner of the lower story said to him: I will dismantle the structure and rebuild it. The owner o...
+    Enter new ref (or press ENTER to keep): Bava_Batra 7b.8
+    ⬇️  Fetching text for 'Bava_Batra 7b.8'...
+    ✅ Success! Ref updated to: Bava Batra 7b:8
+
+🎞️  VIDEO 59/202: Daf Reactions Bava Metzia 114: The Garden of Eden Leaf Heist!
+    ℹ️  Current Ref: Bava_Metzia 114a
+        EN: Indeed, the debtor’s needs are cast upon him, because it is stated in connection with this same issu...
+    Enter new ref (or press ENTER to keep): Bava_Metzia 114b.3
+    ⬇️  Fetching text for 'Bava_Metzia 114b.3'...
+    ✅ Success! Ref updated to: Bava Metzia 114b:3
+
+🎞️  VIDEO 60/202: Daf Reactions Bava Metzia 114: Don’t Meet Me in the Cemetery
+    ℹ️  Current Ref: Bava_Metzia 114a
+        EN: Indeed, the debtor’s needs are cast upon him, because it is stated in connection with this same issu...
+    Enter new ref (or press ENTER to keep): Bava_Metzia 114a.10
+    ⬇️  Fetching text for 'Bava_Metzia 114a.10'...
+    ✅ Success! Ref updated to: Bava Metzia 114a:10
+
+🎞️  VIDEO 61/202: Daf Reactions Bava Metzia 97: The Great Mouse Collective
+    ℹ️  Current Ref: Bava_Metzia 97a
+        EN: Is this the halakha? Is it not sufficient to pay him the difference between the broken ax’s previous...
+    Enter new ref (or press ENTER to keep): Bava_Metzia 97a.4
+    ⬇️  Fetching text for 'Bava_Metzia 97a.4'...
+    ✅ Success! Ref updated to: Bava Metzia 97a:4
+
+🎞️  VIDEO 62/202: Daf Reactions Bava Metzia 91: Employee of the Month
+    ℹ️  Current Ref: Bava_Metzia 91a
+        EN: It is taught at the beginning of tractate Temura that the Torah prohibits the substitution of a non-...
+    Enter new ref (or press ENTER to keep): Bava_Metzia 91b.4
+    ⬇️  Fetching text for 'Bava_Metzia 91b.4'...
+    ✅ Success! Ref updated to: Bava Metzia 91b:4
+
+🎞️  VIDEO 63/202: A Daf Reactions minisode #bavametzia 90
+    ℹ️  Current Ref: Bava Metzia 90a
+        EN: or that thresh teruma and tithe, which one may not allow his cows to eat, if he muzzles them he does...
+    Enter new ref (or press ENTER to keep):             
+    ✅ Keeping: Bava Metzia 90a
+
+🎞️  VIDEO 64/202: Daf Reactions Bava Metzia 84: The Body in the Attic
+    ℹ️  Current Ref: Bava_Metzia 84a
+        EN: Elijah the prophet encountered him...
+    Enter new ref (or press ENTER to keep): Bava_Metzia 84b.1
+    ⬇️  Fetching text for 'Bava_Metzia 84b.1'...
+    ✅ Success! Ref updated to: Bava Metzia 84b:1
+
+🎞️  VIDEO 65/202: Daf Reactions Bava Metzia 84: The Real Beauty Queen of Jerusalem
+    ℹ️  Current Ref: Bava_Metzia 84a
+        EN: Elijah the prophet encountered him...
+    Enter new ref (or press ENTER to keep): Bava_Metzia 84a.7
+    ⬇️  Fetching text for 'Bava_Metzia 84a.7'...
+    ✅ Success! Ref updated to: Bava Metzia 84a:7
+
+🎞️  VIDEO 66/202: Daf Reactions Bava Metzia 83: Vinegar, Son of Wine!
+    ℹ️  Current Ref: Bava_Metzia 83a
+        EN: And even on an inclined plane, this works out well where there is no evidence, i.e., in a case witho...
+    Enter new ref (or press ENTER to keep): Bava_Metzia 83b.5
+    ⬇️  Fetching text for 'Bava_Metzia 83b.5'...
+    ✅ Success! Ref updated to: Bava Metzia 83b:5
+
+🎞️  VIDEO 67/202: Daf Reactions Bava Metzia 70: A Pang of Sad
+    ℹ️  Current Ref: Bava_Metzia 70a
+        EN: And the men of pitch [benei kufera], i.e., sailors, are accustomed to paying rent at the time of pul...
+    Enter new ref (or press ENTER to keep): Bava_Metzia 70a.2
+    ⬇️  Fetching text for 'Bava_Metzia 70a.2'...
+    ✅ Success! Ref updated to: Bava Metzia 70a:2
+
+🎞️  VIDEO 68/202: Daf Reactions Bava Metzia 59: The Oven of Akhnai
+    ℹ️  Current Ref: Bava_Metzia 59a
+        EN: It is preferable for a person to engage in intercourse with a woman whose married status is uncertai...
+    Enter new ref (or press ENTER to keep): Bava_Metzia 59b.1
+    ⬇️  Fetching text for 'Bava_Metzia 59b.1'...
+    ✅ Success! Ref updated to: Bava Metzia 59b:1
+
+🎞️  VIDEO 69/202: Daf Reactions Bava Metzia 42: Mad Stacks
+    ℹ️  Current Ref: Bava_Metzia 42a
+        EN: MISHNA: In the case of one who deposited coins with another, and that bailee bound it in a cloth and...
+    Enter new ref (or press ENTER to keep):            
+    ✅ Keeping: Bava_Metzia 42a
+
+🎞️  VIDEO 70/202: Daf Reactions Bava Kamma 117: Resting Smirk Face
+    ℹ️  Current Ref: Bava_Kamma 117a
+        EN: if it is the halakha or if it is a fine? Rav Huna bar Ḥiyya said to him: If it is the halakha, we le...
+    Enter new ref (or press ENTER to keep): Bava_Kamma 117a.22
+    ⬇️  Fetching text for 'Bava_Kamma 117a.22'...
+    ✅ Success! Ref updated to: Bava Kamma 117a:22
+
+🎞️  VIDEO 71/202: Daf Reactions Bava Kamma 113: You’ve Been Served!
+    ℹ️  Current Ref: Bava_Kamma 113a
+        EN: But if the defendant is in the city, the court does not ostracize him for failing to respond to a su...
+    Enter new ref (or press ENTER to keep):               
+    ✅ Keeping: Bava_Kamma 113a
+
+🎞️  VIDEO 72/202: Daf Reactions Bava Kamma 104: Bring the Receipts!
+    ℹ️  Current Ref: Bava_Kamma 104a
+        EN: as he has already admitted his obligation on his own. Rabbi Tarfon concedes that a robber who wishes...
+    Enter new ref (or press ENTER to keep):               
+    ✅ Keeping: Bava_Kamma 104a
+
+🎞️  VIDEO 73/202: Daf Reactions Bava Kamma 101: Deus Ex Monkeyna 🐒
+    ℹ️  Current Ref: Bava_Kamma 101a
+        EN: The sediments of dye in the cauldrons, that is, the dyer took the dye remaining in the cauldron from...
+    Enter new ref (or press ENTER to keep): Bava_Kamma 101a.12
+    ⬇️  Fetching text for 'Bava_Kamma 101a.12'...
+    ✅ Success! Ref updated to: Bava Kamma 101a:12
+
+🎞️  VIDEO 74/202: Daf Reactions Bava Kamma 92: Just An Innocent Cabbage!
+    ℹ️  Current Ref: Bava_Kamma 92a
+        EN: One might have thought that he must give precedence to the cutting down of a barren tree even if the...
+    Enter new ref (or press ENTER to keep): Bava_Kamma 92a.17
+    ⬇️  Fetching text for 'Bava_Kamma 92a.17'...
+    ✅ Success! Ref updated to: Bava Kamma 92a:17
+
+🎞️  VIDEO 75/202: Daf Reactions Bava Kamma 90: The Five Second Rule
+    ℹ️  Current Ref: Bava_Kamma 90a
+        EN: Consecration of an item to the Temple, the advent of the prohibition of leavened bread taking effect...
+    Enter new ref (or press ENTER to keep): Bava_Kamma 90b.2
+    ⬇️  Fetching text for 'Bava_Kamma 90b.2'...
+    ✅ Success! Ref updated to: Bava Kamma 90b:2
+
+🎞️  VIDEO 76/202: Daf Reactions Bava Kamma 60: Think Globally, Bark Locally
+    ℹ️  Current Ref: Bava_Kamma 60a
+        EN: of thin wood and a candle [sheraga], since in that case his own action, i.e., that of the one who se...
+    Enter new ref (or press ENTER to keep): Bava_Kamma 60b.10
+    ⬇️  Fetching text for 'Bava_Kamma 60b.10'...
+    ✅ Success! Ref updated to: Bava Kamma 60b:10
+
+🎞️  VIDEO 77/202: Daf Reactions Bava Kamma 55: Wild Goose Chase
+    ℹ️  Current Ref: Bava_Kamma 55a
+        EN: in the context of the mitzva to honor one’s parents, the word good is stated there: “In order that i...
+    Enter new ref (or press ENTER to keep): Bava_Kamma 55a.10
+    ⬇️  Fetching text for 'Bava_Kamma 55a.10'...
+    ✅ Success! Ref updated to: Bava Kamma 55a:10
+
+🎞️  VIDEO 78/202: Daf Reactions Bava Kamma 41: This, Too, Is Mino-Torah
+    ℹ️  Current Ref: Bava_Kamma 41a
+        EN: that the ox should be considered like one that killed her, as it was the reason for her execution, a...
+    Enter new ref (or press ENTER to keep):              
+    ✅ Keeping: Bava_Kamma 41a
+
+🎞️  VIDEO 79/202: Bava Kamma 27: The Man Who Falls D!ck-First Off Of A Roof 😱
+    ℹ️  Current Ref: Bava_Kama 27a
+        EN: exempt, as it is impossible to sentence any one of them to death since no one person killed the vict...
+    Enter new ref (or press ENTER to keep): Bava_Kamma 27a.3
+    ⬇️  Fetching text for 'Bava_Kamma 27a.3'...
+    ✅ Success! Ref updated to: Bava Kamma 27a:3
+
+🎞️  VIDEO 80/202: Daf Reactions Bava Kamma 26: A Large Boulder the Size of a Small Boulder
+    ℹ️  Current Ref: Bava_Kamma 26a
+        EN: The Gemara asks: Are we saying that based on the a fortiori inference one should have to pay the ful...
+    Enter new ref (or press ENTER to keep): Bava_Kamma 26b.3
+    ⬇️  Fetching text for 'Bava_Kamma 26b.3'...
+    ✅ Success! Ref updated to: Bava Kamma 26b:3

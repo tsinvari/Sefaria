@@ -4,8 +4,7 @@ import time
 import re
 from typing import Dict, Any, Optional
 
-# --- PASTE YOUR FULL COOKIE STRING HERE ---
-COOKIE_STR = "_user=%7B%22_uid%22%3A30698%7D; version_preferences_by_corpus=%7B%22Bavli%22%3A%7B%22en%22%3A%22William%20Davidson%20Edition%20-%20English%22%7D%7D; interfaceLang=english; user_history=%5B%7B%22ref%22%3A%22Klein%20Dictionary%2C%20%D7%92%D7%95%D7%A3%201%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Klein%20Dictionary%2C%20%D7%92%D7%95%D7%A3%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1759748745%2C%22he_ref%22%3A%22%D7%9E%D7%99%D7%9C%D7%95%D7%9F%20%D7%A7%D7%9C%D7%99%D7%99%D7%9F%2C%20%D7%92%D7%95%D7%A3%20%D7%90%D7%B3%22%7D%2C%7B%22ref%22%3A%22Klein%20Dictionary%2C%20%D7%92%D7%95%D7%A3%201%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Klein%20Dictionary%2C%20%D7%92%D7%95%D7%A3%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1759748741%2C%22he_ref%22%3A%22%D7%9E%D7%99%D7%9C%D7%95%D7%9F%20%D7%A7%D7%9C%D7%99%D7%99%D7%9F%2C%20%D7%92%D7%95%D7%A3%20%D7%90%D7%B3%22%7D%2C%7B%22ref%22%3A%22Rashi%20on%20Deuteronomy%2032%3A2%3A1%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Rashi%20on%20Deuteronomy%22%2C%22language%22%3A%22hebrew%22%2C%22time_stamp%22%3A1759403090%2C%22he_ref%22%3A%22%D7%A8%D7%A9%5C%22%D7%99%20%D7%A2%D7%9C%20%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9C%D7%B4%D7%91%3A%D7%91%D7%B3%3A%D7%90%D7%B3%22%7D%2C%7B%22ref%22%3A%22Judaism\'s%20Life%20Changing%20Ideas%3B%20A%20Weekly%20Reading%20of%20the%20Jewish%20Bible%2C%20Haazinu%3B%20Emotional%20Intelligence%2019%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Judaism\'s%20Life%20Changing%20Ideas%3B%20A%20Weekly%20Reading%20of%20the%20Jewish%20Bible%2C%20Haazinu%3B%20Emotional%20Intelligence%22%2C%22language%22%3A%22hebrew%22%2C%22time_stamp%22%3A1759403088%2C%22he_ref%22%3A%22%D7%A8%D7%A2%D7%99%D7%95%D7%A0%D7%95%D7%AA%20%D7%9E%D7%A9%D7%A0%D7%99%20%D7%97%D7%99%D7%99%D7%9D%3B%20%D7%A7%D7%A8%D7%99%D7%90%D7%95%D7%AA%20%D7%97%D7%93%D7%A9%D7%95%D7%AA%20%D7%91%D7%A4%D7%A8%D7%A9%D7%AA%20%D7%94%D7%A9%D7%91%D7%95%D7%A2%2C%20%D7%94%D7%90%D7%96%D7%99%D7%A0%D7%95%20%D7%99%D7%B4%D7%98%22%7D%2C%7B%22ref%22%3A%22Rashi%20on%20Deuteronomy%2032%3A2%3A1%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Rashi%20on%20Deuteronomy%22%2C%22language%22%3A%22hebrew%22%2C%22time_stamp%22%3A1759401932%2C%22he_ref%22%3A%22%D7%A8%D7%A9%5C%22%D7%99%20%D7%A2%D7%9C%20%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9C%D7%B4%D7%91%3A%D7%91%D7%B3%3A%D7%90%D7%B3%22%7D%2C%7B%22ref%22%3A%22Judaism\'s%20Life%20Changing%20Ideas%3B%20A%20Weekly%20Reading%20of%20the%20Jewish%20Bible%2C%20Haazinu%3B%20Emotional%20Intelligence%2019%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Judaism\'s%20Life%20Changing%20Ideas%3B%20A%20Weekly%20Reading%20of%20the%20Jewish%20Bible%2C%20Haazinu%3B%20Emotional%20Intelligence%22%2C%22language%22%3A%22hebrew%22%2C%22time_stamp%22%3A1759390965%2C%22he_ref%22%3A%22%D7%A8%D7%A2%D7%99%D7%95%D7%A0%D7%95%D7%AA%20%D7%9E%D7%A9%D7%A0%D7%99%20%D7%97%D7%99%D7%99%D7%9D%3B%20%D7%A7%D7%A8%D7%99%D7%90%D7%95%D7%AA%20%D7%97%D7%93%D7%A9%D7%95%D7%AA%20%D7%91%D7%A4%D7%A8%D7%A9%D7%AA%20%D7%94%D7%A9%D7%91%D7%95%D7%A2%2C%20%D7%94%D7%90%D7%96%D7%99%D7%A0%D7%95%20%D7%99%D7%B4%D7%98%22%7D%5D; guide_overlay_seen_editor=2025-10-20T11:38:40.366Z; csrftoken=ql3KgZ2YfoC9ZaevU75oYKs2pfIaJ3gcALuX03Y9WFrXMxn8gEAEBqRYlQG88p6G; sessionid=aw4yay7divnnkkiyb3ukl8awngael91r; open_trans_banner_shown=1; contentLang=bilingual; language=bilingual"
+COOKIE_STR = "_vwo_uuid_v2=DAEF75EA9F5AA9A8942BF68D2048B82BA|0fde10cd8b44b61b08adcced7a7ff985; _ga=GA1.1.1685663087.1737284307; _ga_P6B48B03CT=GS1.2.1737793214.2.0.1737793214.60.0.0; _ga_5S6RP1RFZ2=GS1.1.1737793214.2.1.1737793214.60.0.0; _hjSessionUser_2695522=eyJpZCI6Ijc0MDgzZTYxLTRhMTItNWVjMi05MTMwLTlkNTYyYjU0M2YyMSIsImNyZWF0ZWQiOjE3MzcyODQzMDcwMjgsImV4aXN0aW5nIjp0cnVlfQ==; learned_about_new_editor=1; user_history=%5B%7B%22ref%22%3A%22Genesis%201%3A3%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Genesis%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1760642812%2C%22he_ref%22%3A%22%D7%91%D7%A8%D7%90%D7%A9%D7%99%D7%AA%20%D7%90%D7%B3%3A%D7%92%D7%B3%22%7D%2C%7B%22ref%22%3A%22Deuteronomy%2032%3A1%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1759519790%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9C%D7%B4%D7%91%3A%D7%90%D7%B3%22%7D%2C%7B%22ref%22%3A%22Deuteronomy%2032%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1759344578%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9C%D7%B4%D7%91%22%7D%2C%7B%22ref%22%3A%22Deuteronomy.32.1-52%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1759171208%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9C%D7%B4%D7%91%3A%D7%90%D7%B3-%D7%A0%D7%B4%D7%91%22%7D%2C%7B%22ref%22%3A%22Deuteronomy%2032%3A1-52%22%2C%22versions%22%3A%7B%22en%22%3A%7B%7D%2C%22he%22%3A%7B%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1759080365%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9C%D7%B4%D7%91%3A%D7%90%D7%B3-%D7%A0%D7%B4%D7%91%22%7D%2C%7B%22ref%22%3A%22Deuteronomy%2029%22%2C%22versions%22%3A%7B%22en%22%3A%7B%7D%2C%22he%22%3A%7B%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1757866566%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9B%D7%B4%D7%98%22%7D%2C%7B%22ref%22%3A%22Deuteronomy%2029%22%2C%22versions%22%3A%7B%22en%22%3A%7B%7D%2C%22he%22%3A%7B%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1757866562%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9B%D7%B4%D7%98%22%7D%2C%7B%22ref%22%3A%22Deuteronomy%2030%3A1-20%22%2C%22versions%22%3A%7B%22en%22%3A%7B%7D%2C%22he%22%3A%7B%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1757866556%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9C%D7%B3%3A%D7%90%D7%B3-%D7%9B%D7%B3%22%7D%2C%7B%22ref%22%3A%22Deuteronomy%2029%3A9-30%3A20%22%2C%22versions%22%3A%7B%22en%22%3A%7B%7D%2C%22he%22%3A%7B%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1757866555%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9B%D7%B4%D7%98%3A%D7%98%D7%B3-%D7%9C%D7%B3%3A%D7%9B%D7%B3%22%7D%5D; guide_overlay_seen_editor=2025-10-27T20:08:14.761Z; contentLang=bilingual; language=bilingual; open_trans_banner_shown=1; csrftoken=fDW36B9cPfK4000i3yKsiFcYGsK652BbU6DDBqWXODcd6gIYl9MuoprBxS7ZFntQ; sessionid=eyb9wqjpymb9ugw4pyw9e9nddi4p5nag; _user=%7B%22_uid%22%3A149200%7D; version_preferences_by_corpus=%7B%22undefined%22%3A%7B%22en%22%3A%22The%20Book%20of%20Tobit%2C%20English%20translation%20by%20A.%20Neubauer%2C%201878%22%7D%7D"
 # -------------------------------------------
 
 CLOSING_PARAGRAPH_HTML = (
@@ -13,7 +12,7 @@ CLOSING_PARAGRAPH_HTML = (
     "<p>What you just saw is part of <b>The Daf Reactions Project</b>, where I share my "
     "daily practice of studying the Babylonian Talmud (Daf Yomi) from the viewpoint "
     "of a formerly Orthodox, now secular, Millennial feminist.</p>"
-    "<p>I'm Miriam Anzovin—a Jewish Woman, nerd, storyteller, and artist. My passion "
+    "<p>I'm Miriam Anzovin—a Jewish nerd, storyteller, and artist. My passion "
     "is putting this ancient discourse in direct communication with modern internet "
     "culture, pop culture, and current events.</p>"
     "<p>These videos are my authentic reactions, with commentary that's both heartfelt "
@@ -68,14 +67,9 @@ def post_sheet(session, csrf_token, item):
     title = item.get('original_title', 'Untitled Sheet')
     paragraph = item.get("paragraph")
     youtube_embed = item.get("youtube_embed")
-
-    # --- CHANGE 2: Prioritize the GUESSED reference and text ---
-    # If a guess exists, use it. Otherwise, fall back to the original daf_reference.
     
-    # Use the guessed reference if available, otherwise fall back to the main daf reference
     daf_name = item.get("daf_reference")
-    #daf_name_he = "זבחים מה"
-    # The Hebrew ref doesn't need a guess, the main one is fine
+
     daf_name_he = item.get('daf_reference_he') 
     
     # Use the guessed text if available, otherwise fall back to the 1st-line text
@@ -119,7 +113,7 @@ def post_sheet(session, csrf_token, item):
         "status": "unlisted",
         "collections": [],
          "topics": [{"asTyped": "Talmud", "slug": "talmud", "en": "Talmud","he": "תלמוד"}],
-        "summary":"What you just saw is part of The Daf Reactions Project, where I share my daily practice of studying the Babylonian Talmud (Daf Yomi) from the viewpoint of a formerly Orthodox, now secular, Millennial feminist.",
+        "summary": paragraph,
         "collectionName": "DafReactions",
     }
 
@@ -196,17 +190,17 @@ def create_sheets_from_json(json_file, limit: Optional[int] = None):
 
 if __name__ == "__main__":
     # This is the final, fully enriched file from our new script 2.5
-    INPUT_JSON_FILE = "refined_2025-11-04_processed_data_Dafreactions.json"
+    INPUT_JSON_FILE = "2025-11-28_dafreaction_llamafied.json"
     
     # --- CHANGE 5: Add user prompt for limit ---
     print("Select a processing option:")
     print("  1. Run entire JSON file")
-    print("  2. Run first 3 items only (for testing)")
+    print("  2. Run first 5 items only (for testing)")
     choice = input("Enter choice (1 or 2): ")
 
     run_limit = None
     if choice == '2':
-        run_limit = 3
+        run_limit = 5
     elif choice == '1':
         print("--- Will process the entire file. ---")
     else:

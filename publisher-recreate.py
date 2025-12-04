@@ -3,13 +3,11 @@ import requests
 import time
 import re
 import urllib.parse
+import datetime
+import os
 from typing import Dict, Any, Optional, List
 
-# --- PASTE THE SAME COOKIE STRING FROM poster.py ---
-COOKIE_STR = "_user=%7B%22_uid%22%3A30698%7D; version_preferences_by_corpus=%7B%22Bavli%22%3A%7B%22en%22%3A%22William%20Davidson%20Edition%20-%20English%22%7D%7D; interfaceLang=english; user_history=%5B%7B%22ref%22%3A%22Klein%20Dictionary%2C%20%D7%92%D7%95%D7%A3%201%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Klein%20Dictionary%2C%20%D7%92%D7%95%D7%A3%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1759748745%2C%22he_ref%22%3A%22%D7%9E%D7%99%D7%9C%D7%95%D7%9F%20%D7%A7%D7%9C%D7%99%D7%99%D7%9F%2C%20%D7%92%D7%95%D7%A3%20%D7%90%D7%B3%22%7D%2C%7B%22ref%22%3A%22Klein%20Dictionary%2C%20%D7%92%D7%95%D7%A3%201%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Klein%20Dictionary%2C%20%D7%92%D7%95%D7%A3%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1759748741%2C%22he_ref%22%3A%22%D7%9E%D7%99%D7%9C%D7%95%D7%9F%20%D7%A7%D7%9C%D7%99%D7%99%D7%9F%2C%20%D7%92%D7%95%D7%A3%20%D7%90%D7%B3%22%7D%2C%7B%22ref%22%3A%22Rashi%20on%20Deuteronomy%2032%3A2%3A1%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Rashi%20on%20Deuteronomy%22%2C%22language%22%3A%22hebrew%22%2C%22time_stamp%22%3A1759403090%2C%22he_ref%22%3A%22%D7%A8%D7%A9%5C%22%D7%99%20%D7%A2%D7%9C%20%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9C%D7%B4%D7%91%3A%D7%91%D7%B3%3A%D7%90%D7%B3%22%7D%2C%7B%22ref%22%3A%22Judaism\'s%20Life%20Changing%20Ideas%3B%20A%20Weekly%20Reading%20of%20the%20Jewish%20Bible%2C%20Haazinu%3B%20Emotional%20Intelligence%2019%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Judaism\'s%20Life%20Changing%20Ideas%3B%20A%20Weekly%20Reading%20of%20the%20Jewish%20Bible%2C%20Haazinu%3B%20Emotional%20Intelligence%22%2C%22language%22%3A%22hebrew%22%2C%22time_stamp%22%3A1759403088%2C%22he_ref%22%3A%22%D7%A8%D7%A2%D7%99%D7%95%D7%A0%D7%95%D7%AA%20%D7%9E%D7%A9%D7%A0%D7%99%20%D7%97%D7%99%D7%99%D7%9D%3B%20%D7%A7%D7%A8%D7%99%D7%90%D7%95%D7%AA%20%D7%97%D7%93%D7%A9%D7%95%D7%AA%20%D7%91%D7%A4%D7%A8%D7%A9%D7%AA%20%D7%94%D7%A9%D7%91%D7%95%D7%A2%2C%20%D7%94%D7%90%D7%96%D7%99%D7%A0%D7%95%20%D7%99%D7%B4%D7%98%22%7D%2C%7B%22ref%22%3A%22Rashi%20on%20Deuteronomy%2032%3A2%3A1%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Rashi%20on%20Deuteronomy%22%2C%22language%22%3A%22hebrew%22%2C%22time_stamp%22%3A1759401932%2C%22he_ref%22%3A%22%D7%A8%D7%A9%5C%22%D7%99%20%D7%A2%D7%9C%20%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9C%D7%B4%D7%91%3A%D7%91%D7%B3%3A%D7%90%D7%B3%22%7D%2C%7B%22ref%22%3A%22Judaism\'s%20Life%20Changing%20Ideas%3B%20A%20Weekly%20Reading%20of%20the%20Jewish%20Bible%2C%20Haazinu%3B%20Emotional%20Intelligence%2019%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Judaism\'s%20Life%20Changing%20Ideas%3B%20A%20Weekly%20Reading%20of%20the%20Jewish%20Bible%2C%20Haazinu%3B%20Emotional%20Intelligence%22%2C%22language%22%3A%22hebrew%22%2C%22time_stamp%22%3A1759390965%2C%22he_ref%22%3A%22%D7%A8%D7%A2%D7%99%D7%95%D7%A0%D7%95%D7%AA%20%D7%9E%D7%A9%D7%A0%D7%99%20%D7%97%D7%99%D7%99%D7%9D%3B%20%D7%A7%D7%A8%D7%99%D7%90%D7%95%D7%AA%20%D7%97%D7%93%D7%A9%D7%95%D7%AA%20%D7%91%D7%A4%D7%A8%D7%A9%D7%AA%20%D7%94%D7%A9%D7%91%D7%95%D7%A2%2C%20%D7%94%D7%90%D7%96%D7%99%D7%A0%D7%95%20%D7%99%D7%B4%D7%98%22%7D%5D; guide_overlay_seen_editor=2025-10-20T11:38:40.366Z; csrftoken=ql3KgZ2YfoC9ZaevU75oYKs2pfIaJ3gcALuX03Y9WFrXMxn8gEAEBqRYlQG88p6G; sessionid=aw4yay7divnnkkiyb3ukl8awngael91r; open_trans_banner_shown=1; contentLang=bilingual; language=bilingual"
-# -------------------------------------------
-
-# --- Re-used functions from poster.py ---
+COOKIE_STR = "_user=%7B%22_uid%22%3A30698%7D; _vwo_uuid_v2=DAEF75EA9F5AA9A8942BF68D2048B82BA|0fde10cd8b44b61b08adcced7a7ff985; _ga=GA1.1.1685663087.1737284307; _ga_P6B48B03CT=GS1.2.1737793214.2.0.1737793214.60.0.0; _ga_5S6RP1RFZ2=GS1.1.1737793214.2.1.1737793214.60.0.0; _hjSessionUser_2695522=eyJpZCI6Ijc0MDgzZTYxLTRhMTItNWVjMi05MTMwLTlkNTYyYjU0M2YyMSIsImNyZWF0ZWQiOjE3MzcyODQzMDcwMjgsImV4aXN0aW5nIjp0cnVlfQ==; learned_about_new_editor=1; user_history=%5B%7B%22ref%22%3A%22Genesis%201%3A3%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Genesis%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1760642812%2C%22he_ref%22%3A%22%D7%91%D7%A8%D7%90%D7%A9%D7%99%D7%AA%20%D7%90%D7%B3%3A%D7%92%D7%B3%22%7D%2C%7B%22ref%22%3A%22Deuteronomy%2032%3A1%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1759519790%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9C%D7%B4%D7%91%3A%D7%90%D7%B3%22%7D%2C%7B%22ref%22%3A%22Deuteronomy%2032%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1759344578%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9C%D7%B4%D7%91%22%7D%2C%7B%22ref%22%3A%22Deuteronomy.32.1-52%22%2C%22versions%22%3A%7B%22en%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%2C%22he%22%3A%7B%22languageFamilyName%22%3A%22%22%2C%22versionTitle%22%3A%22%22%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1759171208%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9C%D7%B4%D7%91%3A%D7%90%D7%B3-%D7%A0%D7%B4%D7%91%22%7D%2C%7B%22ref%22%3A%22Deuteronomy%2032%3A1-52%22%2C%22versions%22%3A%7B%22en%22%3A%7B%7D%2C%22he%22%3A%7B%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1759080365%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9C%D7%B4%D7%91%3A%D7%90%D7%B3-%D7%A0%D7%B4%D7%91%22%7D%2C%7B%22ref%22%3A%22Deuteronomy%2029%22%2C%22versions%22%3A%7B%22en%22%3A%7B%7D%2C%22he%22%3A%7B%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1757866566%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9B%D7%B4%D7%98%22%7D%2C%7B%22ref%22%3A%22Deuteronomy%2029%22%2C%22versions%22%3A%7B%22en%22%3A%7B%7D%2C%22he%22%3A%7B%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1757866562%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9B%D7%B4%D7%98%22%7D%2C%7B%22ref%22%3A%22Deuteronomy%2030%3A1-20%22%2C%22versions%22%3A%7B%22en%22%3A%7B%7D%2C%22he%22%3A%7B%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1757866556%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9C%D7%B3%3A%D7%90%D7%B3-%D7%9B%D7%B3%22%7D%2C%7B%22ref%22%3A%22Deuteronomy%2029%3A9-30%3A20%22%2C%22versions%22%3A%7B%22en%22%3A%7B%7D%2C%22he%22%3A%7B%7D%7D%2C%22book%22%3A%22Deuteronomy%22%2C%22language%22%3A%22bilingual%22%2C%22time_stamp%22%3A1757866555%2C%22he_ref%22%3A%22%D7%93%D7%91%D7%A8%D7%99%D7%9D%20%D7%9B%D7%B4%D7%98%3A%D7%98%D7%B3-%D7%9C%D7%B3%3A%D7%9B%D7%B3%22%7D%5D; guide_overlay_seen_editor=2025-10-27T20:08:14.761Z; csrftoken=qSa3i9GgsAnrqF9XrU6GTnrPtltoShE5J9EboBT6ZCx9n758bCa2epS3Dcbid64Z; sessionid=ph68w5pmrnkzqky1dfqw5c625zx1damu; contentLang=bilingual; language=bilingual; version_preferences_by_corpus=%7B%22Bavli%22%3A%7B%22en%22%3A%22William%20Davidson%20Edition%20-%20English%22%7D%7D"
 
 def parse_cookie_string(cookie_str: str) -> Dict[str, str]:
     """Parses a browser's cookie string into a dictionary."""
@@ -35,8 +33,6 @@ def create_session_with_cookies(cookie_str: str) -> requests.Session:
         session.cookies.set(key, value)
     return session
 
-# --- New functions for publisher.py ---
-
 def extract_user_id(cookie_dict: Dict[str, str]) -> int:
     """Extracts the Sefaria User ID from the cookie dictionary."""
     user_cookie_str = cookie_dict.get("_user")
@@ -44,28 +40,23 @@ def extract_user_id(cookie_dict: Dict[str, str]) -> int:
         raise ValueError("Could not find '_user' cookie. Is it part of your COOKIE_STR?")
     
     try:
-        # URL-decode the cookie string (e.g., %7B -> {)
         decoded_str = urllib.parse.unquote(user_cookie_str)
-        # Load the decoded string as JSON
         user_data = json.loads(decoded_str)
-        
         user_id = user_data.get("_uid")
         if not user_id:
             raise ValueError("Found '_user' cookie but it doesn't contain '_uid'.")
-        
         return int(user_id)
     except (json.JSONDecodeError, TypeError, ValueError) as e:
         print(f"Error parsing user cookie: {e}")
         raise ValueError(f"Could not parse user ID from cookie: {user_cookie_str}")
 
-def get_unpublished_sheets(session: requests.Session, user_id: int) -> List[Dict[str, Any]]:
+def get_unpublished_sheet_summaries(session: requests.Session, user_id: int) -> List[Dict[str, Any]]:
     """
-    Fetches all sheets for a user.
-    Prints details of the first public and first unlisted sheet found.
-    Returns a list of the 'unlisted' ones for processing.
+    Fetches the summary list of all unlisted sheets for a user.
+    Returns a list of dictionaries containing basic info (id, title).
     """
     api_url = f"https://www.sefaria.org/api/sheets/user/{user_id}"
-    print(f"Fetching sheets for user {user_id} from {api_url}...")
+    print(f"Fetching sheet list for user {user_id} from {api_url}...")
     
     try:
         response = session.get(api_url)
@@ -77,79 +68,74 @@ def get_unpublished_sheets(session: requests.Session, user_id: int) -> List[Dict
             print("No sheets found for this user.")
             return []
 
-        unpublished_sheets = []
-        published_sheets = []
-        
-        # Filter sheets into two lists
+        unpublished = []
         for sheet in all_sheets:
-            if sheet.get("status") == "unlisted": # Sefaria uses "unlisted" for private
-                unpublished_sheets.append({
+            if sheet.get("status") == "unlisted":
+                unpublished.append({
                     "id": sheet.get("id"),
                     "title": sheet.get("title", "Untitled")
                 })
-            elif sheet.get("status") == "public":
-                published_sheets.append({
-                    "id": sheet.get("id"),
-                    "title": sheet.get("title", "Untitled")
-                })
-        """
-        print("\n--- Debugging: Full Sheet Data Inspection ---")
-       
-        # 1. Print data for the first PUBLIC sheet found
-        if published_sheets:
-            print(f"\nFound {len(published_sheets)} PUBLIC sheets.")
-            first_public_id = published_sheets[0]['id']
-            print(f"Fetching full details for first public sheet (ID: {first_public_id}) for comparison...")
-            try:
-                sheet_detail_res = session.get(f"https://www.sefaria.org/api/sheets/{first_public_id}")
-                sheet_detail_res.raise_for_status()
-                public_sheet_data = sheet_detail_res.json()
-                print(f"--- Data for PUBLIC sheet '{published_sheets[0]['title']}' ---")
-                print(json.dumps(public_sheet_data, indent=2))
-                print("--------------------------------------------------")
-            except requests.exceptions.RequestException as e:
-                print(f"  - Could not fetch details for public sheet {first_public_id}: {e}")
-        else:
-            print("\nFound 0 PUBLIC sheets.")
-
-        # 2. Print data for the first UNLISTED sheet found
-        if unpublished_sheets:
-            print(f"\nFound {len(unpublished_sheets)} UNLISTED sheets.")
-            first_unlisted_id = unpublished_sheets[0]['id']
-            print(f"Fetching full details for first unlisted sheet (ID: {first_unlisted_id}) for inspection...")
-            try:
-                sheet_detail_res = session.get(f"https://www.sefaria.org/api/sheets/{first_unlisted_id}")
-                sheet_detail_res.raise_for_status()
-                unlisted_sheet_data = sheet_detail_res.json()
-                print(f"--- Data for UNLISTED sheet '{unpublished_sheets[0]['title']}' ---")
-                print(json.dumps(unlisted_sheet_data, indent=2))
-                print("----------------------------------------------------")
-            except requests.exceptions.RequestException as e:
-                print(f"  - Could not fetch details for unlisted sheet {first_unlisted_id}: {e}")
-        else:
-            print("\nFound 0 UNLISTED sheets.")
         
-        print("\n--- End of Debugging Inspection ---")"""
-        
-        # Return only the list of sheets we want to process
-        return unpublished_sheets
+        return unpublished
         
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching sheets: {e}")
+        print(f"Error fetching sheet list: {e}")
         return []
 
-def publish_single_sheet_by_recreate(session: requests.Session, csrf_token: str, sheet_id: int, title: str):
+def create_backup(session: requests.Session, sheets_to_backup: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
-    Publishes a sheet by GETTING its data, DELETING it, and RE-CREATING it as public.
+    Fetches full data for every sheet in the list and saves to a local JSON file.
+    Returns the list of full sheet data objects.
     """
-    print(f"  Re-creating '{title}' (ID: {sheet_id}) as public...")
+    print(f"\n--- 💾 Starting Backup of {len(sheets_to_backup)} sheets ---")
+    full_data_list = []
     
-    get_url = f"https://www.sefaria.org/api/sheets/{sheet_id}"
-    # --- FIX 1: Use the /delete URL ---
-    delete_url = f"https://www.sefaria.org/api/sheets/{sheet_id}/delete"
+    for idx, sheet_info in enumerate(sheets_to_backup, 1):
+        sheet_id = sheet_info['id']
+        title = sheet_info['title']
+        print(f"  [{idx}/{len(sheets_to_backup)}] Fetching data for: '{title}' (ID: {sheet_id})...")
+        
+        try:
+            response = session.get(f"https://www.sefaria.org/api/sheets/{sheet_id}")
+            response.raise_for_status()
+            sheet_data = response.json()
+            full_data_list.append(sheet_data)
+        except Exception as e:
+            print(f"    ❌ Failed to fetch data for {title}: {e}")
+            # Skipping backup for this item, which effectively skips processing
+            continue
+            
+        time.sleep(0.5) # Rate limiting
+
+    # Generate filename with today's date
+    today = datetime.date.today().isoformat()
+    filename = f"{today}_backup.json"
+    
+    try:
+        with open(filename, 'w', encoding='utf-8') as f:
+            json.dump(full_data_list, f, indent=4, ensure_ascii=False)
+        print(f"✅ Backup successfully saved to: {filename}")
+        print(f"--- Backup Complete ---\n")
+    except Exception as e:
+        print(f"❌ Failed to write backup file: {e}")
+        return []
+        
+    return full_data_list
+
+def publish_sheet_from_data(session: requests.Session, csrf_token: str, sheet_data: Dict[str, Any]) -> bool:
+    """
+    Takes full sheet data (from backup), modifies it in-memory, deletes the old ID, 
+    and creates a new public sheet.
+    Returns True on success, False on failure.
+    """
+    old_id = sheet_data.get("id")
+    title = sheet_data.get("title", "Untitled")
+    
+    print(f"  Processing '{title}' (Old ID: {old_id})...")
+
+    delete_url = f"https://www.sefaria.org/api/sheets/{old_id}/delete"
     create_url = "https://www.sefaria.org/api/sheets/"
 
-    # Headers for GET and CREATE
     common_headers = {
         'accept': '*/*',
         'accept-language': 'en-US,en;q=0.9',
@@ -168,80 +154,75 @@ def publish_single_sheet_by_recreate(session: requests.Session, csrf_token: str,
     }
 
     try:
-        # 1. GET the full sheet data
-        get_response = session.get(get_url)
-        get_response.raise_for_status()
-        sheet_data = get_response.json()
-        print(f"    -> Got data for sheet {sheet_id}")
-
-        # 2. Modify the data in-memory to be "create-ready"
-        sheet_data["status"] = "public"
-        sheet_data["collectionName"] = "DafReactions"
-        sheet_data["collectionImage"] = None
+        # 1. Modify Data in Memory (Working on a copy)
+        new_data = sheet_data.copy()
         
-        if "options" in sheet_data:
-            sheet_data["options"]["collaboration"] = "group-can-edit"
+        new_data["status"] = "public"
+        new_data["collectionName"] = "DafReactions"
+        new_data["collectionImage"] = None
         
-        if "tags" not in sheet_data or sheet_data["tags"] is None:
-            sheet_data["tags"] = []
-        if "DafReactions" not in sheet_data["tags"]:
-            sheet_data["tags"].append("DafReactions")
+        if "options" in new_data:
+            new_data["options"]["collaboration"] = "group-can-edit"
+        else:
+            new_data["options"] = {"collaboration": "group-can-edit"}
+        
+        if "tags" not in new_data or new_data["tags"] is None:
+            new_data["tags"] = []
+        if "DafReactions" not in new_data["tags"]:
+            new_data["tags"].append("DafReactions")
             
-        if "topics" not in sheet_data or not sheet_data["topics"]:
-             sheet_data["topics"] = [{"asTyped": "Talmud", "slug": "talmud", "en": "Talmud","he": "תלמוד"}]
+        if "topics" not in new_data or not new_data["topics"]:
+             new_data["topics"] = [{"asTyped": "Talmud", "slug": "talmud", "en": "Talmud","he": "תלמוד"}]
         
-        if "summary" not in sheet_data or not sheet_data["summary"]:
-             sheet_data["summary"] = "A Daf Reactions sheet."
+        if "summary" not in new_data or not new_data["summary"]:
+             new_data["summary"] = "A Daf Reactions sheet."
 
-        # Remove keys that should not be sent on CREATE
-        if "_id" in sheet_data:
-            del sheet_data["_id"]
-        if "id" in sheet_data:
-            del sheet_data["id"] # Don't send the old numeric ID
+        # Clean keys strictly for creation
+        new_data.pop("_id", None)
+        new_data.pop("id", None)
+        new_data.pop("dateCreated", None)
+        new_data.pop("dateModified", None)
         
-        print(f"    -> Prepared new public payload for '{title}'")
+        # 2. DELETE Old Sheet
+        # We try to delete using specific headers to mimic browser behavior
+        delete_headers = common_headers.copy()
+        
+        # --- FIX: Handle 'owner' whether it is a dict or an int ---
+        owner_data = sheet_data.get("owner")
+        owner_id = ""
+        
+        if isinstance(owner_data, dict):
+            owner_id = owner_data.get("id", "")
+        elif isinstance(owner_data, int):
+            owner_id = owner_data
+            
+        if owner_id:
+            delete_headers['referer'] = f'https://www.sefaria.org/profile/{owner_id}?tab=sheets'
+        
+        print(f"    -> Deleting old sheet {old_id}...")
+        del_res = session.post(delete_url, headers=delete_headers)
+        
+        # If 404, it means it's already deleted (perhaps from a previous failed run). 
+        # We can proceed to create.
+        if del_res.status_code == 404:
+            print("    -> Sheet not found (404). Assuming already deleted. Proceeding...")
+        else:
+            del_res.raise_for_status()
+            print("    -> Delete successful.")
 
-        # 3. DELETE the old sheet
-        print(f"    -> Deleting old sheet {sheet_id}...")
+        # 3. CREATE New Sheet
+        print(f"    -> Creating new public sheet...")
+        form_data = {"json": json.dumps(new_data)}
+        create_res = session.post(create_url, headers=common_headers, data=form_data)
+        create_res.raise_for_status()
         
-        # --- FIX 2: Create delete_headers based on user's cURL ---
-        delete_headers = {
-            'User-Agent': common_headers['user-agent'],
-            'accept': 'application/json, text/javascript, */*; q=0.01',
-            'accept-language': 'en-US,en;q=0.9,es-419;q=0.8,es;q=0.7,fr-FR;q=0.6,fr;q=0.5,he;q=0.4',
-            'x-csrftoken': csrf_token, 
-            'x-requested-with': 'XMLHttpRequest', 
-            'sec-fetch-dest': 'empty',
-            'sec-fetch-mode': 'cors',
-            'sec-fetch-site': 'same-origin',
-            'referer': 'https://www.sefaria.org/profile/rene-michel?tab=sheets', # From cURL
-            'dnt': '1',
-            'priority': 'u=1, i',
-        }
-        
-        # --- FIX 3: Use session.post() for the delete request ---
-        delete_response = session.post(delete_url, headers=delete_headers)
-        delete_response.raise_for_status()
-        print(f"    -> Successfully deleted old sheet {sheet_id}.")
-
-        # 4. CREATE the new sheet
-        print(f"    -> Creating new public sheet for '{title}'...")
-        form_data = {"json": json.dumps(sheet_data)}
-        create_response = session.post(create_url, headers=common_headers, data=form_data)
-        create_response.raise_for_status()
-        
-        new_sheet_data = create_response.json()
-        new_url = new_sheet_data.get("url")
-        print(f"  + Successfully RE-CREATED sheet. New URL: {new_url}")
+        new_info = create_res.json()
+        new_url = new_info.get("url", "Unknown URL")
+        print(f"    + Created successfully! New URL: {new_url}")
         return True
 
-    except requests.exceptions.RequestException as e:
-        print(f"  - FAILED to re-create '{title}'. Error: {e}")
-        if e.response is not None:
-            print(f"    Response Status: {e.response.status_code}")
-            print(f"    Response Content: {e.response.text}")
-        print("    !!! The original sheet may have been DELETED but not re-created. !!!")
-        print(f"    !!! Find the data for '{title}' (ID: {sheet_id}) in your logs and re-create it manually. !!!")
+    except Exception as e:
+        print(f"    ❌ FAILED to publish '{title}': {e}")
         return False
 
 def main():
@@ -259,41 +240,69 @@ def main():
         print(f"Error initializing: {e}")
         return
 
-    unpublished_sheets = get_unpublished_sheets(session, user_id)
+    # 1. Identify sheets
+    unpublished_summaries = get_unpublished_sheet_summaries(session, user_id)
     
-    if not unpublished_sheets:
+    if not unpublished_summaries:
         print("No unpublished sheets found. All done!")
         return
 
-    print(f"\nFound {len(unpublished_sheets)} unpublished sheets:")
-    for i, sheet in enumerate(unpublished_sheets, 1):
+    print(f"\nFound {len(unpublished_summaries)} unpublished sheets.")
+    for i, sheet in enumerate(unpublished_summaries, 1):
         print(f"  {i}. {sheet['title']} (ID: {sheet['id']})")
     
     print("\n---")
-    print("WARNING: This script will DELETE and then RE-CREATE each sheet.")
-    print("This will change their URLs and creation dates.")
-    choice = input(f"Do you want to publish all {len(unpublished_sheets)} sheets this way? (yes/no): ").strip().lower()
+    print("WARNING: This script will:")
+    print("1. BACKUP all these sheets to a local file.")
+    print("2. DELETE the originals from Sefaria.")
+    print("3. RE-CREATE them as public sheets (generating new URLs).")
+    choice = input(f"Do you want to proceed? (yes/no): ").strip().lower()
     
-    if choice in ['yes', 'y']:
-        print("\nStarting publishing process (Delete & Re-create)...")
-        success_count = 0
-        fail_count = 0
+    if choice not in ['yes', 'y']:
+        print("Aborting.")
+        return
+
+    # 2. Backup full data
+    full_sheets_data = create_backup(session, unpublished_summaries)
+    
+    if not full_sheets_data:
+        print("Backup failed or returned no data. Aborting to be safe.")
+        return
+
+    # 3. Process (Delete -> Create)
+    failed_sheets = []
+    print("\n--- 🚀 Starting Publishing Process ---")
+    
+    for sheet in full_sheets_data:
+        success = publish_sheet_from_data(session, csrf_token, sheet)
+        if not success:
+            failed_sheets.append(sheet)
         
-        for sheet in unpublished_sheets:
-            # Pass the new function name here
-            if publish_single_sheet_by_recreate(session, csrf_token, sheet['id'], sheet['title']):
-                success_count += 1
+        # Be nice to API
+        time.sleep(2)
+
+    # 4. Retry Logic
+    if failed_sheets:
+        print(f"\n⚠️  Finished, but {len(failed_sheets)} sheets FAILED to process.")
+        retry_choice = input("Do you want to retry the failed sheets using the backup data? (yes/no): ").strip().lower()
+        
+        if retry_choice in ['yes', 'y']:
+            print("\n--- 🔄 Retrying Failed Sheets ---")
+            still_failed = []
+            
+            for sheet in failed_sheets:
+                if not publish_sheet_from_data(session, csrf_token, sheet):
+                    still_failed.append(sheet)
+                time.sleep(2)
+            
+            if still_failed:
+                print(f"\n❌ Retry complete. {len(still_failed)} sheets still failed. Please check logs/backup.")
             else:
-                fail_count += 1
-            time.sleep(2) # Be extra nice to the API since we're doing 3 requests
-        
-        print("\n---")
-        print("Publishing complete.")
-        print(f"  Successfully re-created: {success_count}")
-        print(f"  Failed to re-create:     {fail_count}")
-        
+                print("\n✅ All retries successful!")
+        else:
+            print("Skipping retry. Data for failed sheets is safe in your backup file.")
     else:
-        print("Aborting. No sheets were published.")
+        print("\n✨ Success! All sheets published.")
 
 if __name__ == "__main__":
     main()
